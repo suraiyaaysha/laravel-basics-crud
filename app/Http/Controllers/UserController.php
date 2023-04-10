@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Models\User;
+use Illuminate\View\View;
+
+class UserController extends Controller
+{
+    //Show the profile for a given user
+    public function show(string $id): View {
+        return view('user.profile', [
+            'user' => User::findOrFail($id)
+        ]);
+    }
+
+    // $input = $request->all();
+    // @if(session('status'))
+    //     <div class="alert alert-success">
+    //     {{ session('status') }}
+    //     </div>
+
+    // @endif
+
+}
